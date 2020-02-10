@@ -1,0 +1,34 @@
+.btn {
+  border-radius: 160px;
+  padding: 20px 36px;
+  //   &--primary {
+  //   }
+  //   &--sm {
+  //   }
+  //   &--lg {
+  //   }
+  //   &[disabled] {
+  //   }
+}
+@each $name, $colors in $button-colors {
+  .btn--#{$name} {
+    color: map-get($colors, "color");
+    background-color: map-get($colors, "bg-color");
+    border: 1px solid map-get($colors, "border-color");
+    transition: all 0.25s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background-color: map-get($colors, "bg-color-hover");
+      color: map-get($colors, "color-hover");
+    }
+    &[disabled] {
+      cursor: not-allowed;
+      border-color: lighten(map-get($colors, "border-color"), $amount: 15%);
+      @if $name == "default" {
+        background-color: #cdcdcd;
+      } @else {
+        background-color: lighten(map-get($colors, "bg-color"), 15%);
+      }
+    }
+  }
+}

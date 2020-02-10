@@ -1,0 +1,90 @@
+.index-page {
+  &__section {
+    min-width: 100px;
+    &:nth-child(1) {
+      .header {
+        justify-content: space-between;
+        align-items: center;
+        padding: 21px 24px;
+        &__link {
+          font-size: 20px;
+        }
+        &__navbar {
+          display: none;
+        }
+        &_btn {
+          padding: 5px 15px;
+          color: rgba(255, 255, 255, 0.7);
+          border: 1px solid #e5e5e5;
+          border-radius: 4px;
+        }
+      }
+    }
+    &:nth-child(2) {
+      background: url("~images/Rectangle.png") no-repeat center center;
+      background-size: cover;
+      color: #ffffff;
+      .intro {
+        padding: 50px 0 80px 0;
+        text-align: center;
+        &__heading {
+          font-size: 36px;
+        }
+        &__desc {
+          font-size: 16px;
+        }
+        &__hr {
+          background-color: $primary;
+        }
+        &__btn {
+          font-size: 14px;
+          border-radius: 160px;
+          text-transform: uppercase;
+          display: inline-block;
+        }
+      }
+    }
+    &:nth-child(3) {
+      text-align: center;
+      background-color: $primary;
+      padding: 128px 0;
+      .product {
+        &__heading {
+          font-size: 31px;
+          color: #ffffff;
+        }
+        &__desc {
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+    &:nth-child(4) {
+      text-align: center;
+      padding: 128px 0;
+      .services {
+        &__hr {
+          background-color: $primary;
+        }
+        .fas {
+          font-size: 64px;
+          color: $primary;
+        }
+      }
+    }
+    &:nth-child(5) {
+      text-align: center;
+      .images {
+        flex-wrap: wrap;
+        &__child {
+          box-sizing: border-box;
+          width: 50%;
+        }
+      }
+    }
+    &:nth-child(6) {
+      text-align: center;
+      background-color: #343a40;
+      padding: 128px 0;
+    }
+  }
+}
