@@ -1,13 +1,8 @@
-.clearfix {
-  &:after {
-    display: table;
-    content: "";
-    clear: both;
-  }
-}
 .hr {
   width: 52px;
   background-color: $primary;
   height: 3px;
   margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

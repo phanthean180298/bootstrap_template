@@ -1,90 +1,191 @@
 .index-page {
   &__section {
-    min-width: 100px;
+    text-align: center;
     &:nth-child(1) {
-      .header {
-        justify-content: space-between;
-        align-items: center;
-        padding: 21px 24px;
-        &__link {
-          font-size: 20px;
-        }
-        &__navbar {
-          display: none;
-        }
-        &_btn {
-          padding: 5px 15px;
-          color: rgba(255, 255, 255, 0.7);
-          border: 1px solid #e5e5e5;
-          border-radius: 4px;
-        }
-      }
-    }
-    &:nth-child(2) {
       background: url("~images/Rectangle.png") no-repeat center center;
       background-size: cover;
-      color: #ffffff;
+      color: #fff;
+
+      .header {
+        background-color: #fff;
+        text-align: left;
+        padding: 24px;
+
+        .nav-link:hover {
+          color: $primary;
+        }
+
+        .navbar-toggler:focus {
+          outline: none;
+        }
+      }
+
       .intro {
         padding: 50px 0 80px 0;
-        text-align: center;
         &__heading {
           font-size: 36px;
         }
         &__desc {
-          font-size: 16px;
-        }
-        &__hr {
-          background-color: $primary;
+          color: $secondary;
         }
         &__btn {
           font-size: 14px;
           border-radius: 160px;
           text-transform: uppercase;
-          display: inline-block;
+        }
+      }
+      @include respond-above(lg) {
+        .header {
+          background-color: inherit;
+
+          .navbar-brand {
+            color: $secondary;
+          }
+
+          .nav-link {
+            color: $secondary;
+
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+        .intro {
+          padding: 190px 140px;
+          &__heading {
+            font-size: 48px;
+          }
+          &__desc {
+            font-size: 18px;
+          }
         }
       }
     }
-    &:nth-child(3) {
-      text-align: center;
+    &:nth-child(2) {
       background-color: $primary;
-      padding: 128px 0;
       .product {
+        padding: 128px 0;
         &__heading {
           font-size: 31px;
           color: #ffffff;
+        }
+        &__hr {
+          background-color: #fff;
         }
         &__desc {
           color: rgba(255, 255, 255, 0.5);
         }
       }
     }
-    &:nth-child(4) {
-      text-align: center;
-      padding: 128px 0;
+    &:nth-child(3) {
       .services {
-        &__hr {
-          background-color: $primary;
+        padding: 128px 0;
+
+        &__child {
+          margin-top: 60px;
         }
+
+        &__title {
+          margin-top: 10px;
+        }
+
         .fas {
           font-size: 64px;
           color: $primary;
         }
       }
     }
-    &:nth-child(5) {
-      text-align: center;
+    &:nth-child(4) {
       .images {
-        flex-wrap: wrap;
+        margin: 0;
+
+        &__container {
+          padding: 0;
+          position: relative;
+
+          &:hover .images__hover {
+            display: block;
+          }
+        }
         &__child {
-          box-sizing: border-box;
-          width: 50%;
+          width: 100%;
+          z-index: -1;
+        }
+        &__hover {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: none;
+          background-color: rgba(244, 98, 58, 0.9);
+        }
+        &__heading {
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 13px;
+          text-transform: uppercase;
+          margin: 0;
+        }
+        &__name {
+          color: #fff;
+          font-size: 19px;
+        }
+        &__text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+    &:nth-child(5) {
+      padding: 128px 0;
+      background-color: #343a40;
+
+      .download {
+        color: #ffffff;
+        &__heading {
+          font-size: 32px;
+          margin-bottom: 24px;
         }
       }
     }
     &:nth-child(6) {
-      text-align: center;
-      background-color: #343a40;
-      padding: 128px 0;
+      .contact {
+        color: #6c757d;
+        padding: 128px 0;
+        &__heading {
+          color: #212529;
+          font-size: 31px;
+        }
+        &__child {
+          margin-top: 52px;
+          .fas {
+            font-size: 48px;
+          }
+          &__mail {
+            color: $primary;
+            cursor: pointer;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    &:nth-child(7) {
+      .footer {
+        background-color: #f8f9fa;
+        color: #6c757d;
+        padding-top: 45px;
+        padding-bottom: 45px;
+        margin: auto;
+        &__sign {
+          font-size: 12px;
+          margin: 0;
+        }
+      }
     }
   }
 }

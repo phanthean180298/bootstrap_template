@@ -7,26 +7,6 @@ var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var TerserJSPlugin = require('terser-webpack-plugin');
 var ProvidePlugin = require('webpack').ProvidePlugin;
 module.exports = {
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: 'Index',
-      filename: 'index.html',
-      template: 'src/templates/index.html'
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Home Page',
-      filename: 'home_page.html',
-      template: 'src/templates/home_page.html'
-    }),
-    new MiniCssExtractPlugin({
-      filename: 'styles.min.css'
-    }),
-    new ProvidePlugin({   // add this
-      $: 'jquery',
-      jQuery: 'jquery'
-    })
-  ],
   devServer: {
     writeToDisk: true
   },
@@ -61,6 +41,10 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'styles.min.css'
+    }),
+    new ProvidePlugin({   // add this
+      $: 'jquery',
+      jQuery: 'jquery'
     })
   ],
   output: {
